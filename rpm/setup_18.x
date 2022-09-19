@@ -348,7 +348,7 @@ exec_cmd "curl -sL -o '${RPM_TMP}' '${RELEASE_URL}'"
 print_status "Installing release setup RPM..."
 
 ## --nosignature because nodesource-release contains the signature!
-exec_cmd "rpm -i --nosignature --force '${RPM_TMP}'"
+exec_cmd "rpm -i --nodeps --nosignature --force '${RPM_TMP}'"
 
 print_status "Cleaning up..."
 
