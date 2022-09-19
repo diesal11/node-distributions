@@ -180,8 +180,8 @@ fi
 #-check-distro-#
 
 ## Check distro and arch
-echo "+ rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -q --whatprovides fedora-release || rpm -q --whatprovides system-release"
-DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -q --whatprovides fedora-release || rpm -q --whatprovides system-release)
+echo "+ rpm -qa | egrep '(centos|cloudlinux|sl|fedora|system)-release'"
+DISTRO_PKG=$(rpm -qa | egrep '(centos|cloudlinux|sl|fedora|system)-release')
 echo "+ uname -m"
 UNAME_ARCH=$(uname -m)
 
