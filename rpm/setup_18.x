@@ -226,10 +226,12 @@ Include your 'distribution package' name: ${DISTRO_PKG}. \
 fi
 
 if [[ $DISTRO_PKG =~ ^system-release ]]; then
-
-  # Amazon Linux, for 2014.* use el7, older versions are unknown, perhaps el6
-  DIST_VERSION=7
-
+    # Amazon Linux, for 2022 use el8, for 2014.* use el7, older versions are unknown, perhaps el6
+  if [[ $DISTRO_PKG=~ amzn2022 ]]; then
+    DIST_VERSION=8
+  else
+    DIST_VERSION=7
+  fi
 else
 
   ## Using the redhat-release-server-X, centos-release-X, centos-stream-release-X, etc. pattern
