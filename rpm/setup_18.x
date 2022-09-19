@@ -185,6 +185,7 @@ DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides cento
 echo "+ uname -m"
 UNAME_ARCH=$(uname -m)
 
+echo $DISTRO_PKG
 
 if [ "X${UNAME_ARCH}" == "Xi686" ]; then
   DIST_ARCH=i386
